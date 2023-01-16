@@ -6,9 +6,25 @@
   <!-- React JS는 어플리케이션이 아주 interactive 하도록 만들어주는 library이고, react-dom은 library, 또는 package인데 모든 React element들을 HTML body에 둘 수 있도록 해준다.-->
   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-  <script>
+  <script src="https://unpkg.com/@babel/standalone@7.12.3/babel.js"></script>
+  <script type="text/babel">
     const root = document.getElementById("root");
-    const h3 = React.createElement(
+
+    // JSX - HTML과 비슷하게 생겼다!
+    // Babel을 사용해서 JSX로 적은 코드를 브라우저가 이해할 수 있는 형태로 바꿔줘야한다.
+    const Title = (
+      <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+        Hello I'm a Title
+      </h3>
+    );
+    const Button = (
+      <button style={{ backgroundColor: "tomato" }} onClick={() => console.log("im clicked")}>
+        Click me
+      </button>
+    );
+
+    // JS
+    /*const h3 = React.createElement(
       "h3",
       {
         onMouseEnter: () => console.log("mouse enter"),
@@ -21,8 +37,8 @@
         onClick: () => console.log("im clicked"),
       },
       "Click me"
-    );
-    const container = React.createElement("div", null, [h3, btn]);
+    );*/
+    const container = React.createElement("div", null, [Title, Button]);
     ReactDOM.render(container, root);
   </script>
 </html>
