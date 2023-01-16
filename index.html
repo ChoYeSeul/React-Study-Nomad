@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <body></body>
+  <body>
+    <div id="root"></div>
+  </body>
+  <!-- React JS는 어플리케이션이 아주 interactive 하도록 만들어주는 library이고, react-dom은 library, 또는 package인데 모든 React element들을 HTML body에 둘 수 있도록 해준다.-->
   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script>
+    const root = document.getElementById("root");
+    const h3 = React.createElement(
+      "h3",
+      {
+        onMouseEnter: () => console.log("mouse enter"),
+      },
+      "Hello I'm a span"
+    );
+    const btn = React.createElement(
+      "button",
+      {
+        onClick: () => console.log("im clicked"),
+      },
+      "Click me"
+    );
+    const container = React.createElement("div", null, [h3, btn]);
+    ReactDOM.render(container, root);
+  </script>
 </html>
