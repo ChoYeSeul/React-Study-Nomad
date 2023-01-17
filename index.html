@@ -12,20 +12,20 @@
 
     // JSX - HTML과 비슷하게 생겼다!
     // Babel을 사용해서 JSX로 적은 코드를 브라우저가 이해할 수 있는 형태로 바꿔줘야한다.
-    const Title = () => {
-      return (
-        <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
-          Hello I'm a Title
-        </h3>
-      );
-    };
-    const Button = () => {
-      return (
-        <button style={{ backgroundColor: "tomato" }} onClick={() => console.log("im clicked")}>
-          Click me
-        </button>
-      );
-    };
+    // const Title = () => {
+    //   return (
+    //     <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+    //       Hello I'm a Title
+    //     </h3>
+    //   );
+    // };
+    // const Button = () => {
+    //   return (
+    //     <button style={{ backgroundColor: "tomato" }} onClick={() => console.log("im clicked")}>
+    //       Click me
+    //     </button>
+    //   );
+    // };
 
     // JS
     /*const h3 = React.createElement(
@@ -43,12 +43,22 @@
       "Click me"
     );*/
     // const container = React.createElement("div", null, [Title, Button]);
+
+    // react에서의 리렌더링
+    let counter = 0;
+    function countUp() {
+      counter = counter + 1;
+      reRender();
+    }
+    function reRender() {
+      ReactDOM.render(<Container />, root);
+    }
     const Container = () => (
       <div>
-        <Title />
-        <Button />
+        <h3>Total clicks: {counter}</h3>
+        <button onClick={countUp}>Click me</button>
       </div>
     );
-    ReactDOM.render(<Container />, root);
+    reRender();
   </script>
 </html>
