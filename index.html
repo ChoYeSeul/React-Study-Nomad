@@ -47,15 +47,16 @@
     // react에서의 리렌더링
     function countUp() {}
     function App() {
-      const data = React.useState(0);
+      const [counter, setCounter] = React.useState(0);
       // const counter = data[0];
       // const modifier = data[1];
-      const [counter, modifier] = data;
-      console.log(data, "data");
+      const onClick = () => {
+        setCounter(counter + 1);
+      };
       return (
         <div>
           <h3>Total clicks: {counter}</h3>
-          <button>Click me</button>
+          <button onClick={onClick}>Click me</button>
         </div>
       );
     }
