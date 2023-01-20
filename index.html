@@ -45,20 +45,20 @@
     // const container = React.createElement("div", null, [Title, Button]);
 
     // react에서의 리렌더링
-    let counter = 0;
-    function countUp() {
-      counter = counter + 1;
-      reRender();
+    function countUp() {}
+    function App() {
+      const data = React.useState(0);
+      // const counter = data[0];
+      // const modifier = data[1];
+      const [counter, modifier] = data;
+      console.log(data, "data");
+      return (
+        <div>
+          <h3>Total clicks: {counter}</h3>
+          <button>Click me</button>
+        </div>
+      );
     }
-    function reRender() {
-      ReactDOM.render(<Container />, root);
-    }
-    const Container = () => (
-      <div>
-        <h3>Total clicks: {counter}</h3>
-        <button onClick={countUp}>Click me</button>
-      </div>
-    );
-    reRender();
+    ReactDOM.render(<App />, root);
   </script>
 </html>
