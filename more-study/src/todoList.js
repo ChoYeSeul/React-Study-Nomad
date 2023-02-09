@@ -1,7 +1,7 @@
 // useEffect는 화면이 다 그려지고 나서 그 이후 실행된다.
 import { useState } from "react";
 
-function App() {
+function todoList() {
   const [toDo, setToDo] = useState("");
   const [toDos, setToDos] = useState([]);
   const toDoChange = (e) => setToDo(e.target.value);
@@ -27,4 +27,4 @@ function App() {
   );
 }
 
-export default App;
+export default todoList;
