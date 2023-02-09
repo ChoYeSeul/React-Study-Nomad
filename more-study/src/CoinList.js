@@ -1,7 +1,7 @@
 // useEffect는 화면이 다 그려지고 나서 그 이후 실행된다.
 import { useEffect, useState } from "react";
 
-function App() {
+function CoinList() {
   const [loading, setLoading] = useState(true);
   const [coinList, setCoinList] = useState([]);
   const getCoinList = () => {
@@ -17,7 +17,7 @@ function App() {
   }, []);
   return (
     <div>
-      <h1>The Coins</h1>
+      <h1>The Coins ({coinList.length})</h1>
       {loading ? (
         "loading..."
       ) : (
@@ -35,4 +35,4 @@ function App() {
   );
 }
 
-export default App;
+export default CoinList;
