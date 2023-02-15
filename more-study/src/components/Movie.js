@@ -13,7 +13,7 @@ function Movie(props) {
           return <li key={`${genresItem}-${index}`}>{genresItem}</li>;
         })}
       </ul>
-      <p>{summary}</p>;
+      <p>{summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}</p>
     </Container>
   );
 }
