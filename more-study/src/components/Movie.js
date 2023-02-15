@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 
+import styled from "styled-components";
+
 function Movie(props) {
   const { coverImg, title, genres, summary, movieId } = props;
   return (
-    <>
+    <Container>
       <img src={coverImg} alt={title} />
       <Link to={`/movie/${movieId}`}>{title}</Link>
       <ul>
@@ -12,8 +14,10 @@ function Movie(props) {
         })}
       </ul>
       <p>{summary}</p>;
-    </>
+    </Container>
   );
 }
 
 export default Movie;
+
+const Container = styled.div``;
